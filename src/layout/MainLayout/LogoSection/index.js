@@ -8,7 +8,8 @@ import { ButtonBase } from '@mui/material';
 import config from 'config';
 import Logo from 'ui-component/Logo';
 import { MENU_OPEN } from 'store/actions';
-
+import { Typography,
+} from '@mui/material';
 // ==============================|| MAIN LOGO ||============================== //
 
 const LogoSection = () => {
@@ -16,7 +17,8 @@ const LogoSection = () => {
     const dispatch = useDispatch();
     return (
         <ButtonBase disableRipple onClick={() => dispatch({ type: MENU_OPEN, id: defaultId })} component={Link} to={config.defaultPath}>
-            <Logo />
+            {/* <Logo /> */}
+            <Typography variant="subtitle1">Student Details</Typography>
         </ButtonBase>
     );
 };

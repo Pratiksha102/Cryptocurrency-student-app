@@ -15,7 +15,7 @@ const Typography = () => (
             <Grid item xs={12} sm={6}>
                 <SubCard title="Heading">
                     <Grid container direction="column" spacing={1}>
-                        <Grid item>
+                        {/* <Grid item>
                             <MuiTypography variant="h1" gutterBottom>
                                 h1. Heading
                             </MuiTypography>
@@ -44,13 +44,13 @@ const Typography = () => (
                             <MuiTypography variant="h6" gutterBottom>
                                 h6. Heading
                             </MuiTypography>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </SubCard>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <SubCard title="Sub title">
-                    <Grid container direction="column" spacing={1}>
+                    {/* <Grid container direction="column" spacing={1}>
                         <Grid item>
                             <MuiTypography variant="subtitle1" gutterBottom>
                                 subtitle1. Lorem ipsum dolor sit connecter adieu siccing eliot. Quos blanditiis tenetur
@@ -61,12 +61,12 @@ const Typography = () => (
                                 subtitle2. Lorem ipsum dolor sit connecter adieu siccing eliot. Quos blanditiis tenetur
                             </MuiTypography>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                 </SubCard>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <SubCard title="Body">
-                    <Grid container direction="column" spacing={1}>
+                    {/* <Grid container direction="column" spacing={1}>
                         <Grid item>
                             <MuiTypography variant="body1" gutterBottom>
                                 body1. Lorem ipsum dolor sit connecter adieu siccing eliot. Quos blanditiis tenetur unde suscipit, quam
@@ -81,12 +81,12 @@ const Typography = () => (
                                 Eum quasi quidem quibusdam.
                             </MuiTypography>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                 </SubCard>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <SubCard title="Extra">
-                    <Grid container direction="column" spacing={1}>
+                    {/* <Grid container direction="column" spacing={1}>
                         <Grid item>
                             <MuiTypography variant="button" display="block" gutterBottom>
                                 button text
@@ -116,7 +116,7 @@ const Typography = () => (
                                 https://berrydashboard.io
                             </MuiTypography>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
                 </SubCard>
             </Grid>
         </Grid>

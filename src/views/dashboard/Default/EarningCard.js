@@ -108,7 +108,7 @@ const EarningCard = ({ isLoading }) => {
                                         >
                                             <MoreHorizIcon fontSize="inherit" />
                                         </Avatar>
-                                        <Menu
+                                        {/* <Menu
                                             id="menu-earning-card"
                                             anchorEl={anchorEl}
                                             keepMounted
@@ -136,7 +136,7 @@ const EarningCard = ({ isLoading }) => {
                                             <MenuItem onClick={handleClose}>
                                                 <ArchiveTwoToneIcon sx={{ mr: 1.75 }} /> Archive File
                                             </MenuItem>
-                                        </Menu>
+                                        </Menu> */}
                                     </Grid>
                                 </Grid>
                             </Grid>
