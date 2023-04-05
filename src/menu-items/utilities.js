@@ -41,27 +41,35 @@ const utilities = {
             breadcrumbs: false
         },
         {
-            id: 'icons',
+            id: 'tabler-icons',
             title: 'View Certificate',
-            type: 'collapse',
-            icon: icons.IconWindmill,
-            children: [
-                {
-                    id: 'tabler-icons',
-                    title: 'Tabler Icons',
-                    type: 'item',
-                    url: '/icons/tabler-icons',
-                    breadcrumbs: false
-                },
-                {
-                    id: 'material-icons',
-                    title: 'Material Icons',
-                    type: 'item',
-                    url: '/icons/material-icons',
-                    breadcrumbs: false
-                }
-            ]
-        }
+            type: 'item',
+            url: '/icons/tabler-icons',
+            icon: icons.IconShadow,
+            breadcrumbs: false
+        },
+        // {
+        //     id: 'icons',
+        //     title: 'View Certificate',
+        //     type: 'collapse',
+        //     icon: icons.IconWindmill,
+        //     children: [
+        //         {
+        //             id: 'tabler-icons',
+        //             title: 'Tabler Icons',
+        //             type: 'item',
+        //             url: '/icons/tabler-icons',
+        //             breadcrumbs: false
+        //         },
+        //         {
+        //             id: 'material-icons',
+        //             title: 'Material Icons',
+        //             type: 'item',
+        //             url: '/icons/material-icons',
+        //             breadcrumbs: false
+        //         }
+        //     ]
+        // }
     ]
 };
 

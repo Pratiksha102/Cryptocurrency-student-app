@@ -56,7 +56,8 @@ const Header = ({ handleLeftDrawerToggle }) => {
             </Box>
 
             {/* header search */}
-            <div style={{marginLeft:"15px"}}>Welcome </div>
+            <div style={{marginLeft:"15px", fontSize:'24px',fontWeight:'800',color:'black'}}>Welcome </div>
+            
             {/* <SearchSection /> */}
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ flexGrow: 1 }} />
