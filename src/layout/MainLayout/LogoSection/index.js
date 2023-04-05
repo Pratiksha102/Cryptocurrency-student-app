@@ -18,7 +18,7 @@ const LogoSection = () => {
     return (
         <ButtonBase disableRipple onClick={() => dispatch({ type: MENU_OPEN, id: defaultId })} component={Link} to={config.defaultPath}>
             {/* <Logo /> */}
-            <Typography variant="subtitle1">Student Details</Typography>
+           <div style={{fontSize:'20px',fontWeight:'800',marginTop:'10px',color:'purple'}}>Student Dashboard</div>
         </ButtonBase>
     );
 };
