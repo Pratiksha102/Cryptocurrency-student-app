@@ -28,7 +28,7 @@ function Color() {
   const [marks,setMarks]=useState(null);
 useEffect(() => {
     let usn = "USN001"
-    let sem = 3
+    let sem = 1
     axios.get(baseURL + "student/get/marks/sem", {
       params: {
         usn: usn,

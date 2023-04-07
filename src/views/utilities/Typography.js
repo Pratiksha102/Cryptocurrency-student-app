@@ -12,6 +12,32 @@ function Typography() {
     const baseURL = "http://127.0.0.1:5003/";
 
 
+    const [usn,setUsn]=useState(null);
+    useEffect(() => {
+        let wallet_address = ""
+        axios.get(baseURL + "admin/get/role", {
+          params: {
+            wallet_address: "0xdfDa1e966F26E93FFdEfb589fdf66A30f953a0aC"
+          }
+        },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).
+         then((response) => {
+            console.log(response,"Role and Code");
+            if(response.data.role == "student") {
+              setUsn(response.data.usn);
+            }
+            else {
+              // throw error
+            }
+          });
+    }, [])
+
+
+
     const Subjects={
       status: true,
       subject_details_array: [
@@ -26,7 +52,7 @@ function Typography() {
     const [subjects,setSubjects]=useState(null);
     useEffect(() => {
         let branch = "CSE"
-        let sem = 3
+        let sem = 1
         axios.get(baseURL + "student/get/subjects", {
           params: {
             branch: branch,
@@ -49,6 +75,31 @@ function Typography() {
           });
     }, [])
 
+      // 2. Get Student Details From Usn
+      const [details,setDetails]=useState(null);
+      useEffect(() => {
+          let usn = "USN001"
+          axios.get(baseURL + "student/get/details", {
+            params: {
+              usn: usn
+            }
+          },
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          }).
+           then((response) => {
+              console.log(response,"Details");
+              if(response.data.status == true) {
+                setDetails(response.data.student_details)
+              }
+              else {
+                // throw error
+              }
+            });
+      }, [])
+  
 
     // 5. Student Enrol in a subject
     const [enrolStatus,setEnrolStatus]=useState(null);
@@ -86,20 +137,20 @@ function Typography() {
     });
   };
 
-  console.log("holaa");
-console.log(state,"state");
+  console.log(subjects,"subjec")
    
   
   return (
     <div className='common-wrapper'>
 <h2><AddHomeIcon sx={{color:'purple'}}/> &nbsp;Enroll in Subject</h2>
 <FormGroup>
-{Subjects?.subject_details_array?.map((item)=>(
+{subjects?.map((item)=>(
+  
   <FormControlLabel control={
     <Checkbox 
     onChange={handleChange}
-    name={item}
-    />} label={item} />
+    name={item?.subject_name}
+    />} label={item?.subject_name} />
 
 ))}
   
