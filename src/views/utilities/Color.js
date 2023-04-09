@@ -80,19 +80,20 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
         <TableHead>
           <TableRow>
             <StyledTableCell>Subjects</StyledTableCell>
-            <StyledTableCell align="right">Marks</StyledTableCell>
-            <StyledTableCell align="right">Grade</StyledTableCell>
+            <StyledTableCell align="left">Subject Code</StyledTableCell>
+            <StyledTableCell align="left">Marks</StyledTableCell>
+            
             
           </TableRow>
         </TableHead>
         <TableBody>
-          {Marks?.student_marks?.map((row) => (
+          {marks?.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row?.subjectName}
               </StyledTableCell>
-              <StyledTableCell align="right">{row?.marks}</StyledTableCell>
-              <StyledTableCell align="right">{row?.marks}</StyledTableCell>
+              <StyledTableCell align="left">{row?.subjectCode}</StyledTableCell>
+              <StyledTableCell align="left">{row?.marks}</StyledTableCell>
               
             </StyledTableRow>
           ))}

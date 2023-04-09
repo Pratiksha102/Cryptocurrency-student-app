@@ -10,9 +10,8 @@ import AddHomeIcon from '@mui/icons-material/AddHome';
 
 function Typography() {
     const baseURL = "http://127.0.0.1:5003/";
-
-
-    const [usn,setUsn]=useState(null);
+    const [studentDetails,setStudentDetails]=useState(null);
+     const [subjects,setSubjects]=useState(null);
     useEffect(() => {
         let wallet_address = ""
         axios.get(baseURL + "admin/get/role", {
@@ -28,60 +27,20 @@ function Typography() {
          then((response) => {
             console.log(response,"Role and Code");
             if(response.data.role == "student") {
-              setUsn(response.data.usn);
+              console.log(response,"resppppp");
+              setStudentDetails(response.data);
             }
             else {
               // throw error
             }
           });
-    }, [])
 
-
-
-    const Subjects={
-      status: true,
-      subject_details_array: [
-        "Database Management System",
-        "Data Analysis and Algorithm",
-        "Data Structure and Alogrithm",
-        "Electronics and Communication"
-    ]
-    }
-    
-    // 4. Get All subjects for a particular branch and sem
-    const [subjects,setSubjects]=useState(null);
-    useEffect(() => {
-        let branch = "CSE"
-        let sem = 1
-        axios.get(baseURL + "student/get/subjects", {
-          params: {
-            branch: branch,
-            sem: sem
-          }
-        },
-        {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          }
-        }).
-         then((response) => {
-            console.log(response,"Details");
-            if(response.data.status == true) {
-              setSubjects(response.data.subject_details_array)
-            }
-            else {
-              // throw error
-            }
-          });
-    }, [])
-
-      // 2. Get Student Details From Usn
-      const [details,setDetails]=useState(null);
-      useEffect(() => {
-          let usn = "USN001"
-          axios.get(baseURL + "student/get/details", {
+          let branch = "CSE"
+          let sem = 1
+          axios.get(baseURL + "student/get/subjects", {
             params: {
-              usn: usn
+              branch: branch,
+              sem: sem
             }
           },
           {
@@ -92,18 +51,51 @@ function Typography() {
            then((response) => {
               console.log(response,"Details");
               if(response.data.status == true) {
-                setDetails(response.data.student_details)
+                setSubjects(response.data.subject_details_array)
               }
               else {
                 // throw error
               }
             });
-      }, [])
-  
+    }, [])
 
-    // 5. Student Enrol in a subject
-    const [enrolStatus,setEnrolStatus]=useState(null);
-    useEffect(() => {
+
+
+    
+  
+      // 2. Get Student Details From Usn
+      const [details,setDetails]=useState(null);
+     useEffect(()=>{
+      console.log(studentDetails,"insidd")
+      if(studentDetails)
+      {
+        let usn = studentDetails?.code
+        axios.get(baseURL + "student/get/details", {
+          params: {
+            usn: usn
+          }
+        },
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).
+         then((response) => {
+            console.log(response,"Details");
+            if(response.data.status == true) {
+              setDetails(response.data.student_details)
+            }
+            else {
+              // throw error
+            }
+          });
+        }
+  
+     },[studentDetails])
+       
+
+      const enrolStudent=(()=>{
+        console.log("inside submit button");
         let branch = ""
         let sem = ""
         let subject_codes = []
@@ -121,13 +113,17 @@ function Typography() {
          then((response) => {
             console.log(response,"Details");
             if(response.data.status == true) {
-              setEnrolStatus(true)
+              alert("Response added successfully");
             }
             else {
-              setEnrolStatus(false)
+              alert("There is an error while submitting the details");
             }
           });
-    }, [])
+
+      })
+
+      
+   
 
   const [state,setState]=useState(null);
   const handleChange = (event) => {
@@ -162,7 +158,9 @@ function Typography() {
 
 <Button sx={{
   marginTop:"20px"
-}}variant="contained">Submit</Button>
+}}variant="contained"
+onClick={enrolStudent}
+>Submit</Button>
     </div>
   )
 }
