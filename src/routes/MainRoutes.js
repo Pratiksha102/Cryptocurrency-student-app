@@ -40,7 +40,7 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-typography',
+                    path: 'enrol',
                     element: <UtilsTypography />
                 }
             ]
@@ -49,7 +49,7 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-color',
+                    path: 'view-marks',
                     element: <UtilsColor />
                 }
             ]
@@ -58,7 +58,7 @@ const MainRoutes = {
             path: 'utils',
             children: [
                 {
-                    path: 'util-shadow',
+                    path: 'generate-certificate',
                     element: <UtilsShadow />
                 }
             ]
@@ -67,7 +67,7 @@ const MainRoutes = {
             path: 'icons',
             children: [
                 {
-                    path: 'tabler-icons',
+                    path: 'view-certificate',
                     element: <UtilsTablerIcons />
                 }
             ]

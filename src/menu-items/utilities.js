@@ -20,7 +20,7 @@ const utilities = {
             id: 'util-typography',
             title: 'Enrol in Subjects',
             type: 'item',
-            url: '/utils/util-typography',
+            url: '/utils/enrol',
             icon: icons.IconTypography,
             breadcrumbs: false
         },
@@ -28,7 +28,7 @@ const utilities = {
             id: 'util-color',
             title: 'View Marks',
             type: 'item',
-            url: '/utils/util-color',
+            url: '/utils/view-marks',
             icon: icons.IconPalette,
             breadcrumbs: false
         },
@@ -36,7 +36,7 @@ const utilities = {
             id: 'util-shadow',
             title: 'Generate Certificate',
             type: 'item',
-            url: '/utils/util-shadow',
+            url: '/utils/generate-certificate',
             icon: icons.IconShadow,
             breadcrumbs: false
         },
@@ -44,7 +44,7 @@ const utilities = {
             id: 'tabler-icons',
             title: 'View Certificate',
             type: 'item',
-            url: '/icons/tabler-icons',
+            url: '/icons/view-certificate',
             icon: icons.IconShadow,
             breadcrumbs: false
         },

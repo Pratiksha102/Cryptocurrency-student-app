@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, ButtonBase } from '@mui/material';
-
+import { Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 // project imports
 import LogoSection from '../LogoSection';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import SearchSection from './SearchSection';
 import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
@@ -17,7 +18,7 @@ import { IconMenu2 } from '@tabler/icons';
 
 const Header = ({ handleLeftDrawerToggle }) => {
     const theme = useTheme();
-
+    const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
             {/* logo & toggler button */}
@@ -55,9 +56,18 @@ const Header = ({ handleLeftDrawerToggle }) => {
                 </ButtonBase>
             </Box>
 
-            {/* header search */}
-            <div style={{marginLeft:"15px", fontSize:'24px',fontWeight:'800',color:'black'}}>Welcome </div>
-            
+            <Box  sx={{marginLeft:"20px",border:'1px solid',borderColor:'#CBC3E3', backgroundColor:"#EBE8FC",width:"90%",borderRadius:'10px'}}>
+           
+       
+            <Typography
+                                                        color={theme.palette.secondary.main}
+                                                        sx={{marginLeft:"20px",left:'50%',padding:'20px',textAlign:'center'}}
+                                                        gutterBottom
+                                                        variant='h3'
+                                                    >
+                                                          Student Details
+                                                    </Typography>
+            </Box>
             {/* <SearchSection /> */}
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ flexGrow: 1 }} />

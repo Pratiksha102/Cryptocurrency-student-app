@@ -11,7 +11,7 @@ export const initialState = {
     fontFamily: config.fontFamily,
     borderRadius: config.borderRadius,
     opened: true,
-    someValue:"heli"
+    walletAddress:""
 };
 
 

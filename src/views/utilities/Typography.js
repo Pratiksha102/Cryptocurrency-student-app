@@ -27,7 +27,7 @@ function Typography() {
          then((response) => {
             console.log(response,"Role and Code");
             if(response.data.role == "student") {
-              console.log(response,"resppppp");
+           
               setStudentDetails(response.data);
             }
             else {
@@ -96,6 +96,7 @@ function Typography() {
 
       const enrolStudent=(()=>{
         console.log("inside submit button");
+        console.log(state,"state");
         let branch = ""
         let sem = ""
         let subject_codes = []
@@ -129,11 +130,10 @@ function Typography() {
   const handleChange = (event) => {
     setState({
       ...state,
-      [event.target.name]: event.target.checked,
+      [event.target.value]: event.target.checked,
     });
   };
 
-  console.log(subjects,"subjec")
    
   
   return (
@@ -146,14 +146,15 @@ function Typography() {
     <Checkbox 
     onChange={handleChange}
     name={item?.subject_name}
+    value={item?.subject_code}
     />} label={item?.subject_name} />
 
 ))}
   
-  <FormControlLabel disabled control={<Checkbox 
+  {/* <FormControlLabel disabled control={<Checkbox 
   onChange={handleChange}
   name="Object Oriented Programming"
-  />} label="Object Oriented Programming" />
+  />} label="Object Oriented Programming" /> */}
 </FormGroup>
 
 <Button sx={{
